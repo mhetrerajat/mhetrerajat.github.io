@@ -1,10 +1,155 @@
 <!DOCTYPE html>
 <html>
+  <!-- Portfolio is under developement. Yet to update few sections. Please check my resume for that.!-->
   <head>
     <meta charset="utf-8">
     <title>Hello !</title>
+    <link rel="stylesheet" type="text/css" href="css/master.min.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/grid.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      var h = window.innerHeight;
+      $('.full_height').css('height', h);
+      $(window).scroll(function(){
+          if ($(window).scrollTop() > h-100){
+              $('header a').css('color','#1e1e1e');
+              $('header').css('padding-top', '30px');
+          }else{
+            $('header a').css('color','#fff');
+            $('header').css('padding-top', '50px');
+          }
+      });
+    });
+    </script>
   </head>
   <body>
-    <h1>Hi there!</h1>
+    <div class="container">
+
+      <!-- Main !-->
+      <div class="main full_height">
+          <header>
+            <div class="grid">
+                <div class="grid-1-2">
+                  <span id="name"><a href="#top">Rajat Mhetre</a></span>
+                </div>
+                <div class="grid-1-2">
+                  <ul class="nav horizontal">
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#skill">Skills</a></li>
+                    <li><a href="#project">Project Experience</a></li>
+                    <li><a href="#work">Work Experience</a></li>
+                    <li><a href="#edu">Education</a></li>
+                    <li><a href="#interests">Interests</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                  </ul>
+                </div>
+            </div>
+          </header>
+          <div id="intro">
+            <h1 class="fadeInUp">Hi,</h1>
+          </div>
+      </div>
+
+      <!-- About !-->
+      <div class="content full_height" id="about">
+        <div class="content_container">
+          <h2>About</h2>
+          <p>Originally a computer science engineer and self-taught programmer.<p>
+          <p>I was fortunate to discover my passion and talent for programming at a young age. I'm exploring and using python and javascript to solve real life problems around me since last 5-6 years.</p>
+          <p>▪ Additionally, I'm interested in Machine Learning and Deep Learning.<br/>
+          ▪ Actively learning the concepts in Data Mining, Big Data, Data Science and their applications.</p>
+        </div>
+      </div>
+
+      <!-- Skills !-->
+      <div class="content full_height" id="skill">
+        <div class="content_container">
+          <h2>Technical Skills</h2>
+            <p>▪ <strong>Languages</strong> : *Python , *JavaScript, Java, C++</p>
+            <p>▪ <strong>Frameworks / Libraries :</strong> Django, *Flask, *Express JS, Meteor, BackboneJS, jQuery, *ReactJS, *node JS,
+            electronJS</p>
+            <p>▪ <strong>Other :</strong> git/Github </p>
+            <p style="font-size:20px;"><strong><i>* denotes advanced skill level</i></strong></p>
+          </div>
+      </div>
+
+      <!-- Project Experience !-->
+      <div class="content full_height" id="project">
+        <div class="content_container">
+          <h2>Project Experience</h2>
+          <p>Yet to update <strong>Project Experience</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Work Experience !-->
+      <div class="content full_height" id="work">
+        <div class="content_container">
+          <h2>Work Experience</h2>
+          <p>Yet to update <strong>Work Experience</strong>.</p>
+        </div>
+      </div>
+
+      <!-- Education !-->
+       <div class="content full_height" id="edu">
+         <div class="content_container">
+            <h2>Education</h2>
+            <p style="font-size:23px;"><strong>Ramdeobaba College of Engineering & Management – Bachelor of Engineering in Computer Science & Engineering : 2012 - 2016</strong></p>
+            <p><strong>Udacity – Android Developer Nanodegree : June 2015 - July 2016</strong></p>
+            <p>
+              <strong>Certifications</strong><br/>
+              ▪ 6.00.1x, Introduction to Computer Science and Programming Using Python, MITx - January 2014<br/>
+              ▪ edX Honor Code Certificate for Introduction to Big Data with Apache Spark - July 2015<br/>
+              ▪ edX Honor Code Certificate for Scalable Machine Learning - August 2015<br/>
+            </p>
+          </div>
+      </div>
+
+      <!-- Interests !-->
+      <div class="content full_height" id="interests">
+        <div class="content_container">
+          <h2>Interests</h2>
+          <p><strong>Travelling</strong><br/>
+            ▪ Keen to experience different cultural and environments.
+          </p>
+        </div>
+      </div>
+
+      <!-- Contact !-->
+      <div class="content full_height" id="contact">
+        <div class="content_container">
+          <h2>Contact</h2>
+
+          <ul class="nav horizontal" id="contact_nav">
+
+            <li>
+                <div id="contact_personal">
+                  <h4>Personal</h4>
+                  <ul>
+                    <li><span><img width="25" height="25" src="https://ssl.gstatic.com/ui/v1/icons/mail/images/favicon5.ico"</span><a href="mailto:mhetrerajat@gmail.com">mhetrerajat@gmail.com</a></li>
+                    <li><span><img width="25" height="25" src="https://assets-cdn.github.com/favicon.ico"</span><a href="https://github.com/mhetrerajat">https://github.com/mhetrerajat</a></li>
+                    <li><span><img width="25" height="25" src="https://d125fmws0bore1.cloudfront.net/assets/favicon-3867f43151ecbff486335ae6a96d17d91d6169d20888131b4681d15b65e1425b.ico"</span><a href="https://profiles.udacity.com/u/rajatmhetre">https://profiles.udacity.com/u/rajatmhetre</a></li>
+                  </ul>
+                </div>
+            </li>
+
+
+            <li>
+              <div id="contact_social">
+                <h4>Social</h4>
+                <ul>
+                  <li><span><img width="25" height="25" src="https://static.licdn.com/scds/common/u/images/logos/favicons/v1/favicon.ico"</span><a href="https://in.linkedin.com/in/mhetrerajat">https://in.linkedin.com/in/mhetrerajat</a></li>
+                  <li><span><img width="25" height="25" src="https://www.facebook.com/rsrc.php/yl/r/H3nktOa7ZMg.ico"</span><a href="https://www.facebook.com/rajat.mhetre">https://www.facebook.com/rajat.mhetre</a></li>
+                  <li><span><img width="25" height="25" src="https://abs.twimg.com/favicons/favicon.ico"</span><a href="https://twitter.com/mhetrerajat">https://twitter.com/mhetrerajat</a></li>
+                </ul>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </body>
 </html>
