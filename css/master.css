@@ -567,3 +567,44 @@ p{
 .content_container{
   margin-top: 100px;
 }
+
+.cards_lane{
+  width: auto;
+  overflow-x: scroll;
+  margin: 0 20px;
+  white-space:nowrap;
+}
+
+.cards_lane li{
+  vertical-align: top;
+}
+
+.card{
+  border-radius: 3px;
+  padding:10px 0;
+  white-space: normal;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+.project{
+  max-width:520px;
+}
+
+.project a{
+  color:#15c;
+  margin-left: 20px;
+}
+
+.project .btn{
+  background: #eee;
+  padding: 20px;
+}
+
+.work{
+  max-width: 400px;
+}
+
+.card h3{
+  font-size: 1.5em;
+  margin-left: 20px;
+}
