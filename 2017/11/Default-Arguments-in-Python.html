@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Default Arguments in Python - Rajat Mhetre</title>
+    <meta name="description" content="Python’s handling of default argument values is one of the few things that tends to create mistakes unknowingly (only once though).">
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400,900,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://localhost:4000/2017/11/Default-Arguments-in-Python">
+    <link rel="alternate" type="application/rss+xml" title="Rajat Mhetre" href="http://localhost:4000/feed.xml">
+</head>
+
+    <body>
+        <main class="u-container">
+        <div class="c-page">
+    <header class="c-page__header">
+    <h1><code>Rajat Mhetre</code></h1>
+
+    
+    <p>
+        <a href="/">Home</a><span
+          class="u-separate"></span> <a href="/projects/">Projects</a><span class="u-separate"></span>&nbsp;<a href="/work/">Work</a><span class="u-separate"></span>&nbsp;<a href="/about/">About</a><span class="u-separate"></span>&nbsp;<a href="/travel/">Travel</a><span class="u-separate"></span><a href="/feed.xml">RSS</a>
+    </p>
+</header>
+
+    <div class="c-page__main">
+    <article class="c-article">
+    <header class="c-article__header">
+        <h1 class="c-article__title">Default Arguments in Python</h1>
+        <p class="c-article__time"><time datetime="2017-11-01T00:00:00+05:30" itemprop="datePublished">Nov 1, 2017</time></p>
+    </header>
+    
+    <!-- Post Tags -->
+    <ul class="c-tags">
+    
+      <li class="c-tag">python</li>
+    
+    </ul>
+
+    <div class="c-article__main">
+        <p>Python’s handling of default argument values is one of the few things that tends to create mistakes unknowingly (only once though).</p>
+
+<p>This horror story is from my personal experience. It took me an hour to debug my silly mistake of using mutable value as default argument in function. Its really difficult to find this type bugs in thousands of lines of code.</p>
+
+<hr />
+
+<h2 id="using-mutable-value-as-function-argument">Using Mutable Value as function argument</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>def foo(numbers=[]):
+	numbers.append(5)
+	return numbers
+</code></pre>
+</div>
+
+<p><strong>Calling foo with argument</strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; foo()
+[5]
+&gt;&gt;&gt; foo(numbers=[4,9])
+[4, 9, 5] # Oh Shit!
+&gt;&gt;&gt; foo(numbers=[1,2])
+[1, 2, 4, 9, 5]
+</code></pre>
+</div>
+
+<p><strong>Calling foo without passing argument</strong></p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt; foo()
+[5]
+&gt;&gt; foo()
+[5, 5]
+&gt;&gt; foo()
+[5, 5, 5] # WHAT IS THIS BLACK MAGIC?
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="why-does-this-happen">Why does this happen?</h2>
+<p>Reason is simple, if you look at the list identity, you will see  that function keeps returning the same object:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&gt;&gt;&gt; id(foo())
+4513595144
+&gt;&gt;&gt; id(foo())
+4513595144
+&gt;&gt;&gt; id(foo())
+4513595144
+</code></pre>
+</div>
+
+<p>Default argument values are always evaluated only when the “def” statement they belong to is executed. In Python, default arguments evaluated at definition time. This behaviour exists because of performance benefits. It’s too expensive to evaluate a function as an initialiser every time the function is called.</p>
+
+<hr />
+
+<h2 id="right-way-to-do-this">Right way to do this</h2>
+<div class="highlighter-rouge"><pre class="highlight"><code>def foo(numbers=None):
+	numbers = numbers if numbers else []
+	numbers.append(5)
+	return numbers
+</code></pre>
+</div>
+
+<hr />
+
+<h2 id="some-other-cases">Some other cases</h2>
+<p>In other cases, the default argument work as expected.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>def foo(count=0):
+	count += 1
+	return count
+
+&gt;&gt;&gt; foo()
+1
+&gt;&gt;&gt; foo(count=2)
+3
+&gt;&gt;&gt; foo(count=4)
+5
+</code></pre>
+</div>
+<p>The reason for this is not default value assignment, but in the value itself. An integer is an immutable type. Incrementing its value by doing <code class="highlighter-rouge">count += 1</code> does not change the original value of <code class="highlighter-rouge">count</code></p>
+
+    </div>
+  
+    <!-- Previous / Next Buttons -->
+    <div class="pagenav">
+		
+		
+		</div>
+
+		<!-- Disqus comments view -->
+		
+</article>
+
+    </div>
+    <footer class="c-page__footer">
+    <p>&copy; Rajat Mhetre 2017</p>
+    <p><a target="_blank" href="https://twitter.com/mhetrerajat">Twitter</a><span class="u-separate"></span><a target="_blank" href="https://github.com/mhetrerajat">Github</a><span class="u-separate"></span><a target="_blank" href="https://linkedin.com/in/mhetrerajat">Linkedin</a><span class="u-separate"></span><a target="_blank" href="https://gitlab.com/mhetrerajat">Gitlab</a></p>
+</footer>
+
+</div>
+
+        </main>
+    
+    </body>
+</html>

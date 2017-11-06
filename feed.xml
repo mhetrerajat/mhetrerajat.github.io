@@ -4,11 +4,99 @@
     <title>Rajat Mhetre</title>
     <description>AI Enthusiast | Polyglot Developer
 </description>
-    <link>https://mhetrerajat.github.io/</link>
-    <atom:link href="https://mhetrerajat.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 27 Aug 2017 02:19:52 +0530</pubDate>
-    <lastBuildDate>Sun, 27 Aug 2017 02:19:52 +0530</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 06 Nov 2017 21:08:35 +0530</pubDate>
+    <lastBuildDate>Mon, 06 Nov 2017 21:08:35 +0530</lastBuildDate>
     <generator>Jekyll v3.4.3</generator>
+    
+      <item>
+        <title>Default Arguments in Python</title>
+        <description>&lt;p&gt;Python’s handling of default argument values is one of the few things that tends to create mistakes unknowingly (only once though).&lt;/p&gt;
+
+&lt;p&gt;This horror story is from my personal experience. It took me an hour to debug my silly mistake of using mutable value as default argument in function. Its really difficult to find this type bugs in thousands of lines of code.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;using-mutable-value-as-function-argument&quot;&gt;Using Mutable Value as function argument&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def foo(numbers=[]):
+	numbers.append(5)
+	return numbers
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Calling foo with argument&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; foo()
+[5]
+&amp;gt;&amp;gt;&amp;gt; foo(numbers=[4,9])
+[4, 9, 5] # Oh Shit!
+&amp;gt;&amp;gt;&amp;gt; foo(numbers=[1,2])
+[1, 2, 4, 9, 5]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Calling foo without passing argument&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt; foo()
+[5]
+&amp;gt;&amp;gt; foo()
+[5, 5]
+&amp;gt;&amp;gt; foo()
+[5, 5, 5] # WHAT IS THIS BLACK MAGIC?
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;why-does-this-happen&quot;&gt;Why does this happen?&lt;/h2&gt;
+&lt;p&gt;Reason is simple, if you look at the list identity, you will see  that function keeps returning the same object:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; id(foo())
+4513595144
+&amp;gt;&amp;gt;&amp;gt; id(foo())
+4513595144
+&amp;gt;&amp;gt;&amp;gt; id(foo())
+4513595144
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Default argument values are always evaluated only when the “def” statement they belong to is executed. In Python, default arguments evaluated at definition time. This behaviour exists because of performance benefits. It’s too expensive to evaluate a function as an initialiser every time the function is called.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;right-way-to-do-this&quot;&gt;Right way to do this&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def foo(numbers=None):
+	numbers = numbers if numbers else []
+	numbers.append(5)
+	return numbers
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;some-other-cases&quot;&gt;Some other cases&lt;/h2&gt;
+&lt;p&gt;In other cases, the default argument work as expected.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;def foo(count=0):
+	count += 1
+	return count
+
+&amp;gt;&amp;gt;&amp;gt; foo()
+1
+&amp;gt;&amp;gt;&amp;gt; foo(count=2)
+3
+&amp;gt;&amp;gt;&amp;gt; foo(count=4)
+5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;The reason for this is not default value assignment, but in the value itself. An integer is an immutable type. Incrementing its value by doing &lt;code class=&quot;highlighter-rouge&quot;&gt;count += 1&lt;/code&gt; does not change the original value of &lt;code class=&quot;highlighter-rouge&quot;&gt;count&lt;/code&gt;&lt;/p&gt;
+</description>
+        <pubDate>Wed, 01 Nov 2017 00:00:00 +0530</pubDate>
+        <link>http://localhost:4000/2017/11/Default-Arguments-in-Python</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/11/Default-Arguments-in-Python</guid>
+        
+        <category>python</category>
+        
+        
+      </item>
     
   </channel>
 </rss>
