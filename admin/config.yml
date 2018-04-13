@@ -3,6 +3,9 @@ backend:
   repo: mhetrerajat/mhetrerajat.github.io
   branch: gh-pages
 
+# backend:
+#   name: test-repo
+
 media_folder: static/img
 public_folder: /img
 
