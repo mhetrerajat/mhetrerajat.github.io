@@ -1,7 +1,7 @@
 backend:
-  name: git-gateway
+  name: github
   repo: mhetrerajat/mhetrerajat.github.io
-  branch: gatsby
+  branch: gh-pages
 
 media_folder: static/img
 public_folder: /img
