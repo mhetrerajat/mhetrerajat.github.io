@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Rajat Mhetre Blog</title>
+        <link>https://mhetrerajat.github.io/blog</link>
+        <description>The best place to stay up-to-date with the latest Rajat Mhetre news and events.</description>
+        <lastBuildDate>Wed, 11 Jan 2017 06:00:00 GMT</lastBuildDate>
+        <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+        <generator>Feed for Node.js</generator>
+        <image>
+            <title>Rajat Mhetre Blog</title>
+            <url>https://mhetrerajat.github.io/undefined</url>
+            <link>https://mhetrerajat.github.io/blog</link>
+        </image>
+        <copyright>Copyright © 2018 Rajat Mhetre</copyright>
+        <item>
+            <title><![CDATA[Default Arguments in Python]]></title>
+            <link>https://mhetrerajat.github.io/blog/2017/01/11/default-arguments-in-python.html</link>
+            <guid>https://mhetrerajat.github.io/blog/2017/01/11/default-arguments-in-python.html</guid>
+            <pubDate>Wed, 11 Jan 2017 06:00:00 GMT</pubDate>
+            <description><![CDATA[<p>Python’s handling of default argument values is one of the few things that tends to create mistakes unknowingly (only once though).</p>
+<p>This horror story is from my personal experience. It took me an hour to debug my silly mistake of using mutable value as default argument in function. Its really difficult to find this type bugs in thousands of lines of code.</p>
+]]></description>
+        </item>
+    </channel>
+</rss>

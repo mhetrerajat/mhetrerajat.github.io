@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Default Arguments in Python · Rajat Mhetre</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Python’s handling of default argument values is one of the few things that tends to create mistakes unknowingly (only once though)."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Default Arguments in Python · Rajat Mhetre"/><meta property="og:type" content="website"/><meta property="og:url" content="https://mhetrerajat.github.io/blog/2017/01/11/default-arguments-in-python"/><meta property="og:description" content="Python’s handling of default argument values is one of the few things that tends to create mistakes unknowingly (only once though)."/><meta property="og:image" content="https://mhetrerajat.github.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://mhetrerajat.github.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><link rel="alternate" type="application/atom+xml" href="https://mhetrerajat.github.io/blog/atom.xml" title="Rajat Mhetre Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://mhetrerajat.github.io/blog/feed.xml" title="Rajat Mhetre Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><h2 class="headerTitle">Rajat Mhetre</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docs/project" target="_self">Projects</a></li><li class=""><a href="/docs/work" target="_self">Work</a></li><li class="siteNavGroupActive"><a href="/blog" target="_self">Blog</a></li><li class=""><a href="/docs/certifications" target="_self">Certifications</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul><li class="navListItem navListItemActive"><a class="navItem" href="/blog/2017/01/11/default-arguments-in-python">Default Arguments in Python</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="/blog/2017/01/11/default-arguments-in-python">Default Arguments in Python</a></h1><p class="post-meta">January 11, 2017</p><div class="authorBlock"><p class="post-authorName"><a href="http://twitter.com/mhetrerajat" target="_blank" rel="noreferrer noopener">Rajat Mhetre</a></p></div></header><div><span><p>Python’s handling of default argument values is one of the few things that tends to create mistakes unknowingly (only once though).</p>
+<p>This horror story is from my personal experience. It took me an hour to debug my silly mistake of using mutable value as default argument in function. Its really difficult to find this type bugs in thousands of lines of code.</p>
+<!--truncate-->
+<h2><a class="anchor" aria-hidden="true" id="using-mutable-value-as-function-argument"></a><a href="#using-mutable-value-as-function-argument" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Mutable Value as function argument</h2>
+<pre><code class="hljs css language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foo</span><span class="hljs-params">(numbers=[])</span>:</span>
+    numbers.append(<span class="hljs-number">5</span>)
+    <span class="hljs-keyword">return</span> numbers
+</code></pre>
+<p><strong>Calling foo with argument</strong></p>
+<pre><code class="hljs css language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>foo()
+[<span class="hljs-number">5</span>]
+<span class="hljs-meta">&gt;&gt;&gt; </span>foo(numbers=[<span class="hljs-number">4</span>,<span class="hljs-number">9</span>])
+[<span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">5</span>] <span class="hljs-comment"># Oh Shit!</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>foo(numbers=[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>])
+[<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>, <span class="hljs-number">5</span>]
+</code></pre>
+<p><strong>Calling foo without passing argument</strong></p>
+<pre><code class="hljs css language-python">&gt;&gt; foo()
+[<span class="hljs-number">5</span>]
+&gt;&gt; foo()
+[<span class="hljs-number">5</span>, <span class="hljs-number">5</span>]
+&gt;&gt; foo()
+[<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>] <span class="hljs-comment"># WHAT IS THIS BLACK MAGIC?</span>
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="why-does-this-happen"></a><a href="#why-does-this-happen" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Why does this happen?</h2>
+<p>Reason is simple, if you look at the list identity, you will see that function keeps returning the same object:</p>
+<pre><code class="hljs css language-python"><span class="hljs-meta">&gt;&gt;&gt; </span>id(foo())
+<span class="hljs-number">4513595144</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>id(foo())
+<span class="hljs-number">4513595144</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>id(foo())
+<span class="hljs-number">4513595144</span>
+</code></pre>
+<p>Default argument values are always evaluated only when the “def” statement they belong to is executed. In Python, default arguments evaluated at definition time. This behaviour exists because of performance benefits. It’s too expensive to evaluate a function as an initialiser every time the function is called.</p>
+<h2><a class="anchor" aria-hidden="true" id="right-way-to-do-this"></a><a href="#right-way-to-do-this" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Right way to do this</h2>
+<pre><code class="hljs css language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foo</span><span class="hljs-params">(numbers=None)</span>:</span>
+    numbers = numbers <span class="hljs-keyword">if</span> numbers <span class="hljs-keyword">else</span> []
+    numbers.append(<span class="hljs-number">5</span>)
+    <span class="hljs-keyword">return</span> numbers
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="some-other-cases"></a><a href="#some-other-cases" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Some other cases</h2>
+<p>In other cases, the default argument work as expected.</p>
+<pre><code class="hljs css language-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">foo</span><span class="hljs-params">(count=<span class="hljs-number">0</span>)</span>:</span>
+    count += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> count
+
+<span class="hljs-meta">&gt;&gt;&gt; </span>foo()
+<span class="hljs-number">1</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>foo(count=<span class="hljs-number">2</span>)
+<span class="hljs-number">3</span>
+<span class="hljs-meta">&gt;&gt;&gt; </span>foo(count=<span class="hljs-number">4</span>)
+<span class="hljs-number">5</span>
+</code></pre>
+<p>The reason for this is not default value assignment, but in the value itself. An integer is an immutable type. Incrementing its value by doing <code>count += 1</code> does not change the original value of <code>count</code>.</p>
+</span></div></div><div class="blogSocialSection"><div class="blogSocialSectionItem"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Default Arguments in Python" data-url="https://mhetrerajat.github.io/blog/2017/01/11/default-arguments-in-python" data-related="true" data-show-count="false">Tweet</a></div></div></div><div class="blog-recent"><a class="button" href="/blog">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#using-mutable-value-as-function-argument">Using Mutable Value as function argument</a></li><li><a href="#why-does-this-happen">Why does this happen?</a></li><li><a href="#right-way-to-do-this">Right way to do this</a></li><li><a href="#some-other-cases">Some other cases</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"></a><div><h5>Social</h5><a href="https://www.facebook.com/mhetrerajat" target="_blank" rel="noreferrer noopener">Facebook</a><a href="https://twitter.com/mhetrerajat" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://www.linkedin.com/in/mhetrerajat" target="_blank" rel="noreferrer noopener">Linkedin</a></div><div><h5>Contribution</h5><a href="https://kaggle.com/mhetrerajat" target="_blank" rel="noreferrer noopener">Kaggle</a><a href="https://github.com/mhetrerajat" target="_blank" rel="noreferrer noopener">GitHub</a><a href="https://gitlab.com/mhetrerajat" target="_blank" rel="noreferrer noopener">GitLab</a></div><div><h5>More</h5><a class="github-button" href="https://github.com/mhetrerajat" data-size="large" aria-label="Follow @mhetrerajat on GitHub">Follow @mhetrerajat</a></div></section><section class="copyright">Copyright © 2018 Rajat Mhetre</section></footer></div><script>window.twttr=(function(d,s, id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};if(d.getElementById(id))return t;js=d.createElement(s);js.id=id;js.src='https://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js, fjs);t._e = [];t.ready = function(f) {t._e.push(f);};return t;}(document, 'script', 'twitter-wjs'));</script></body></html>
