@@ -12,6 +12,9 @@ buildExpired: false
 enableEmoji: true
 enableGitInfo: true
 
+ShowToc: true
+TocOpen: true
+
 build:
   noJSConfigInAssets: false
   useResourceCacheWhen: fallback
@@ -45,8 +48,16 @@ params:
   defaultTheme: auto # dark, light
   disableThemeToggle: false
 
+  disableScrollToTop: false
+
   ShowReadingTime: true
   ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+
+  permalinks:
+    posts: /:year/:month/:title/
 
   cover:
     responsiveImages: true
