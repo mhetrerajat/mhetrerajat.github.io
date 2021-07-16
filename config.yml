@@ -96,3 +96,7 @@ menu:
       name: Certifications
       url: /certs/
       weight: 40
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 50
