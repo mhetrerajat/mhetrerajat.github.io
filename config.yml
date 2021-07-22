@@ -1,0 +1,90 @@
+baseURL: http://mhetrerajat.github.io/
+languageCode: en-us
+title: Rajat Mhetre
+theme: "PaperMod"
+paginate: 5
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+enableEmoji: true
+enableGitInfo: true
+
+ShowToc: true
+TocOpen: true
+
+build:
+  noJSConfigInAssets: false
+  useResourceCacheWhen: fallback
+  writeStats: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+params:
+  env: test # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Rajat Mhetre
+  description: Rajat Mhetre Portfolio
+  keywords:
+    [
+      Blog,
+      Portfolio,
+      Rajat,
+      Mhetre,
+      Data,
+      AI,
+      Machine Learning,
+      AWS,
+      Reinforment Learning,
+    ]
+  author: Me
+  authorName: Rajat Mhetre
+  GitHubUser: mhetrerajat
+  # author: ["Me", "You"] # multiple authors
+  DateFormat: "January 2, 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: false
+
+  disableScrollToTop: false
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+
+  permalinks:
+    posts: /:year/:month/:title/
+
+  cover:
+    responsiveImages: true
+    linkFullImages: true
+
+  homeInfoParams:
+    Title: "Hi \U0001F44B"
+    Content: >
+      My name is Rajat
+
+      - I am working on building the future of data product for insurance software
+
+  socialIcons:
+    - name: twitter
+      url: "https://twitter.com/mhetrerajat"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/mhetrerajat"
+    - name: github
+      url: "https://github.com/mhetrerajat"
+
+menu:
+  main:
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: archives
+      name: Archives
+      url: /archives/
+      weight: 20
