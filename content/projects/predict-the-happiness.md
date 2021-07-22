@@ -6,7 +6,7 @@ tags: ["classification", "machine learning"]
 author: ["Rajat Mhetre"] # multiple authors
 showToc: false
 TocOpen: false
-draft: false
+draft: true
 hidemeta: false
 comments: false
 description: "Classify customers based on their reviews"
