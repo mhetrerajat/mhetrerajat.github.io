@@ -68,7 +68,7 @@ params:
     Content: >
       My name is Rajat
 
-      - I am working on building a future of data product for insurance software
+      - I am working on building the future of data product for insurance software
 
   socialIcons:
     - name: twitter
@@ -80,23 +80,11 @@ params:
 
 menu:
   main:
-    - identifier: projects
-      name: Projects
-      url: /projects/
-      weight: 10
-    - identifier: work
-      name: Work Experience
-      url: /work/
-      weight: 20
     - identifier: posts
       name: Posts
       url: /posts/
-      weight: 30
-    - identifier: certs
-      name: Certifications
-      url: /certs/
-      weight: 40
+      weight: 10
     - identifier: archives
       name: Archives
       url: /archives/
-      weight: 50
+      weight: 20
