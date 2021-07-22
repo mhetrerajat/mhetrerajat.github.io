@@ -3,6 +3,18 @@ title: "Default Arguments in Python"
 date: 2017-01-11
 draft: false
 tags: ["python"]
+showToc: true
+TocOpen: true
+hidemeta: false
+comments: false
+disableHLJS: true # to disable highlightjs
+disableShare: false
+disableHLJS: false
+hideSummary: false
+searchHidden: true
+ShowReadingTime: true
+ShowBreadCrumbs: true
+ShowPostNavLinks: true
 ---
 
 Python’s handling of default argument values is one of the few things that tends to create mistakes unknowingly (only once though).
