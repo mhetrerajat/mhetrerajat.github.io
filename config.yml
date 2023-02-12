@@ -40,7 +40,8 @@ params:
       AI,
       Machine Learning,
       AWS,
-      Reinforment Learning,
+      Computer Vision,
+      Generative AI
     ]
   author: Me
   authorName: Rajat Mhetre
@@ -70,7 +71,7 @@ params:
     Content: >
       My name is Rajat
 
-      - My tryst with computers started with a dream to build a website. Currently, I am working on building the future of a data product for insurance software.
+      - My tryst with computers started with a dream to build a website. Currently, I am working on my Master’s research in text-to-image and image-to-text generative diffusion models.
 
   socialIcons:
     - name: twitter

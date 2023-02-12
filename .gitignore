@@ -5,3 +5,7 @@ README.md
 
 # Mac
 .DS_Store
+
+# Hugo
+.hugo_build.lock
+
