@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: http://mhetrerajat.github.io/sitemap.xml
