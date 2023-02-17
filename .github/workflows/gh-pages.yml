@@ -30,7 +30,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         # if: ${{ github.ref == 'refs/heads/master' }}
         with:
-          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          PUBLISH_BRANCH: master
+          publish_branch: master
           publish_dir: ./docs
