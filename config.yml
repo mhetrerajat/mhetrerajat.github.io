@@ -15,7 +15,7 @@ enableGitInfo: true
 ShowToc: true
 TocOpen: true
 
-publishDir: docs
+publishDir: public
 
 build:
   noJSConfigInAssets: false
