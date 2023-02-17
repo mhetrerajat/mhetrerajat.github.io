@@ -24,11 +24,13 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify
+        run: hugo --gc --minify --cleanDestinationDir
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         # if: ${{ github.ref == 'refs/heads/master' }}
         with:
+          ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: master
           publish_dir: ./docs
