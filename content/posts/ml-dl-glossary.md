@@ -1,7 +1,7 @@
 ---
 title: "Machine Learning Glossary"
 date: 2020-02-11T17:35:22-05:00
-draft: true
+draft: false
 tags: ["machine learning", "deep learning", "computer vision"]
 showToc: true
 TocOpen: true
@@ -16,10 +16,6 @@ ShowReadingTime: true
 ShowBreadCrumbs: true
 ShowPostNavLinks: true
 summary: Glossary of terms from Machine Learning, Computer Vision, Natural Language Processing, and Statistics.
----
-
-- Updated [01 Feb 2023] : Added data
-
 ---
 
 ## I.I.D. Assumption
@@ -41,3 +37,7 @@ Generalization is a definition to demonstrate how well is a trained model to cla
 - [UToronto - Generalization](https://www.cs.toronto.edu/~lczhang/321/notes/notes09.pdf)
 
 ---
+
+## Sequence Models
+
+Sequence models are a type of machine learning model that are designed to work with sequential data, such as time series data or natural language. In general, sequence models aim to learn the underlying patterns and dependencies within a sequence of data, and use this knowledge to make predictions or generate new sequences.
