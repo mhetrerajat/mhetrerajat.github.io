@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Rajat Mhetre</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://mhetrerajat.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Feb 2020 17:35:22 -0500</lastBuildDate><atom:link href="http://mhetrerajat.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Machine Learning Glossary</title>
+      <link>http://mhetrerajat.github.io/posts/ml-dl-glossary/</link>
+      <pubDate>Tue, 11 Feb 2020 17:35:22 -0500</pubDate>
+      
+      <guid>http://mhetrerajat.github.io/posts/ml-dl-glossary/</guid>
+      <description>Glossary of terms from Machine Learning, Computer Vision, Natural Language Processing, and Statistics.</description>
+    </item>
+    
     <item>
       <title>Default Arguments in Python</title>
       <link>http://mhetrerajat.github.io/posts/default-arguments-in-python/</link>
