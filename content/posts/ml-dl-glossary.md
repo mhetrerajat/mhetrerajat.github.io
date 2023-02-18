@@ -14,6 +14,7 @@ hideSummary: false
 searchHidden: true
 ShowReadingTime: true
 ShowBreadCrumbs: true
+math: true
 ShowPostNavLinks: true
 summary: Glossary of terms from Machine Learning, Computer Vision, Natural Language Processing, and Statistics.
 ---
@@ -57,3 +58,24 @@ Bias refers to the error that occurs when a model is unable to capture the true 
 Variance, on the other hand, refers to the error that occurs when a model is too complex and tries to fit the training data too closely. Models with high variance tend to overfit the data, which means they perform well on the training data but fail to generalize to new data.
 
 The trade-off between bias and variance can be explained as a seesaw where increasing one comes at the expense of the other. It refers to the balance between a model's ability to fit the training data (low bias) and its ability to generalize to new data (low variance).
+
+## Self-Attention Mechanism
+
+Self-attention was introduced in the Transformer architecture as an alternative to recurrent neural networks (RNNs) for capturing dependencies between tokens in a sequence.
+
+The self-attention mechanism in the Transformer architecture is based on three learned matrices: the query matrix, the key matrix, and the value matrix. The matrices are used to compute the attention scores for each token in the input sequence, and the attention scores are then used to weight the values of the other tokens in the sequence to compute the output of the self-attention mechanism.
+
+$$ Attention(Q, K, V) = softmax(QK^T / \sqrt(d_k)) * V $$
+
+where `Q`, `K`, and `V` are the query, key, and value matrices, respectively, and d_k is the dimensionality of the key vectors. The softmax function is applied row-wise to the matrix `QK^T / sqrt(d_k)` to obtain the attention scores, which are then used to weight the values in the matrix `V` to obtain the output of the self-attention mechanism.
+
+Intuitively, the attention scores represent the similarity between the query vectors and the key vectors for each token in the input sequence, and are used to weight the values of the other tokens to obtain a weighted sum that represents the output of the self-attention mechanism. The `sqrt(d_k)` term is included to stabilize the gradients during training.
+
+### How are the values of Q, K, and V determined?
+
+The values for query (Q), key (K), and value (V) vectors are learned during the training process. The input sequence of tokens is first embedded into a sequence of embedding vectors, and then each of these embedding vectors is transformed into query, key, and value vectors through linear transformations. These linear transformations are learned during training, and they enable the model to map the input tokens to higher-dimensional representations that capture the relevant semantic information for the task at hand.
+
+The specific transformation used to compute the query, key, and value vectors is determined by the architecture of the model. In the case of the Transformer architecture, the query, key, and value vectors are computed by applying three different learned linear transformations to the input embedding vectors. These transformations are parameterized by learned weight matrices, which are updated during training to optimize the model's performance on the task at hand.
+
+</details>
+
