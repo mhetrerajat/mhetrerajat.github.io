@@ -41,3 +41,11 @@ Generalization is a definition to demonstrate how well is a trained model to cla
 ## Sequence Models
 
 Sequence models are a type of machine learning model that are designed to work with sequential data, such as time series data or natural language. In general, sequence models aim to learn the underlying patterns and dependencies within a sequence of data, and use this knowledge to make predictions or generate new sequences.
+
+## Boosting
+
+Bagging is a technique where multiple models are trained on random samples of the training data set, with replacement. These models are then aggregated, usually by taking the average of their predictions, to create a final prediction. The idea behind bagging is that by training multiple models on different subsets of the data, we can reduce the variance of the model and improve its generalization performance.
+
+## Bagging
+
+Boosting is a technique where multiple weak models are combined to form a strong model. In boosting, each model is trained on a weighted version of the training data set, with the weights changing in each iteration to emphasize the samples that were misclassified in the previous iteration. The idea behind boosting is to focus on the samples that are hard to classify and gradually improve the model's accuracy by iteratively adjusting the weights of the training data set.
