@@ -85,7 +85,6 @@ The training process involves maximizing the likelihood of the target sequence, 
 
 During training, the model generates the target sequence one token at a time, with each token conditioned on the previously generated tokens. This is the "autoregressive" aspect of the method. At each step, the model predicts the probability distribution of the next token, given the previous tokens, and samples a token from that distribution. This sampled token is then used as input to the model at the next step, and the process repeats until the entire target sequence has been generated.
 
-
 ## Cross-Entropy Loss
 
 It measures the difference between two probability distributions: the true distribution and the predicted distribution. The true distribution is represented as a one-hot vector, where the value corresponding to the true class is 1 and all other values are 0. The predicted distribution is the output of the model, typically represented as a vector of probabilities over all possible classes.
@@ -95,3 +94,34 @@ The cross-entropy loss is calculated as the negative log-likelihood of the true 
 $$L = -\log(p_{true})$$
 
 where `L` is the cross-entropy loss, and `p_true` is the predicted probability of the true class. Intuitively, this means that the loss is small when the predicted probability of the true class is high, and large when it is low.
+
+## Autoregressive Models
+
+Autoregressive models are statistical models that use the past values of a time series to predict its future values. In an autoregressive model, the value of the dependent variable at a particular time point is modeled as a linear combination of its past values and a random error term.
+
+In technical terms, any network that employs historical data from a sequence to anticipate a forthcoming value in that sequence may be viewed as autoregressive. However, in the context of deep learning, autoregression typically pertains to the connection between prior outputs as inputs, as opposed to recurrent models that take a fixed number of predetermined inputs.
+
+## Likelihood
+
+The likelihood function is a mathematical function that expresses the probability of observing the data given the model parameters. In other words, it measures how probable the observed data is under the assumption that the model is true.
+
+The intuition behind likelihood can be understood through the following example. Let's consider a simple coin-tossing experiment where we want to estimate the probability of getting heads (H) or tails (T) when flipping a coin. We can model this experiment using a Bernoulli distribution, which is a probability distribution that takes two possible outcomes with equal probabilities.
+
+The Bernoulli distribution is parameterized by a single parameter, p, which represents the probability of getting heads. We can write the probability mass function (PMF) of the Bernoulli distribution as follows:
+
+$$ P(X = H) = p $$
+$$ P(X = T) = 1 - p $$
+
+where X is the random variable that represents the outcome of the coin toss.
+
+Suppose we flip a coin 10 times and observe the following sequence of outcomes: H, T, H, H, T, H, T, T, T, H. We can use the maximum likelihood estimation (MLE) method to estimate the value of p that maximizes the likelihood of observing this sequence of outcomes.
+
+The likelihood function can be expressed as the product of the probabilities of observing each outcome given the value of p. In other words, the likelihood function measures how likely it is to observe the given sequence of outcomes under the assumption that the probability of getting heads is p. The likelihood function for this example can be written as:
+
+$$ L(p) = p^5 * (1-p)^5 $$
+
+To find the value of p that maximizes the likelihood, we can take the derivative of the likelihood function with respect to p and set it to zero. Solving for p, we obtain the MLE estimate of p:
+
+$$ p = 5/10 = 0.5 $$
+
+In other words, the maximum likelihood estimate of the probability of getting heads when flipping a coin is 0.5, which is the intuitive notion of a fair coin.
