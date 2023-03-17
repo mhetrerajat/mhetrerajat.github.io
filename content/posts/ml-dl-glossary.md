@@ -77,5 +77,21 @@ The values for query (Q), key (K), and value (V) vectors are learned during the 
 
 The specific transformation used to compute the query, key, and value vectors is determined by the architecture of the model. In the case of the Transformer architecture, the query, key, and value vectors are computed by applying three different learned linear transformations to the input embedding vectors. These transformations are parameterized by learned weight matrices, which are updated during training to optimize the model's performance on the task at hand.
 
-</details>
+## Autoregressive Maximum Likelihood Learning
 
+It is a training method for sequence generation tasks, where the goal is to generate a sequence of tokens (such as words or pixels) one at a time. In this method, the model is trained to predict the probability distribution of the next token in the sequence given the previous tokens.
+
+The training process involves maximizing the likelihood of the target sequence, given the input sequence, under the model's predicted probability distribution. This is typically done using cross-entropy loss, where the target is the true next token and the model's prediction is the probability distribution over all possible next tokens.
+
+During training, the model generates the target sequence one token at a time, with each token conditioned on the previously generated tokens. This is the "autoregressive" aspect of the method. At each step, the model predicts the probability distribution of the next token, given the previous tokens, and samples a token from that distribution. This sampled token is then used as input to the model at the next step, and the process repeats until the entire target sequence has been generated.
+
+
+## Cross-Entropy Loss
+
+It measures the difference between two probability distributions: the true distribution and the predicted distribution. The true distribution is represented as a one-hot vector, where the value corresponding to the true class is 1 and all other values are 0. The predicted distribution is the output of the model, typically represented as a vector of probabilities over all possible classes.
+
+The cross-entropy loss is calculated as the negative log-likelihood of the true class under the predicted distribution. Mathematically, it is defined as:
+
+$$L = -\log(p_{true})$$
+
+where `L` is the cross-entropy loss, and `p_true` is the predicted probability of the true class. Intuitively, this means that the loss is small when the predicted probability of the true class is high, and large when it is low.
