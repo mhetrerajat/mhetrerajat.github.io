@@ -125,3 +125,15 @@ To find the value of p that maximizes the likelihood, we can take the derivative
 $$ p = 5/10 = 0.5 $$
 
 In other words, the maximum likelihood estimate of the probability of getting heads when flipping a coin is 0.5, which is the intuitive notion of a fair coin.
+
+## Perplexity
+
+Perplexity is a measure of how well a language model predicts a sequence of words. It is commonly used to evaluate the performance of language models in NLP tasks.
+
+Perplexity is defined as the inverse probability of the test set, normalized by the number of words in the test set. Specifically, if we have a language model that has been trained on a dataset of words, and we want to evaluate its performance on a new test set of words, the perplexity of the model on the test set is calculated as follows:
+
+$$ Perplexity = 2^(-log P(w_1, w_2, ..., w_N) / N) $$
+
+where P(w_1, w_2, ..., w_N) is the probability assigned by the language model to the test set, which is a sequence of N words (w_1, w_2, ..., w_N). The logarithm base 2 is used to convert the probability into bits, and the result is divided by the number of words N in the test set to obtain the average per-word perplexity.
+
+In practice, a lower perplexity score indicates better performance of the language model, as it indicates that the model assigns higher probabilities to the test set. A perplexity of 1 means that the model assigns a probability of 1 to each word in the test set, indicating a perfect match between the model and the test set. However, in practice, perplexity scores are usually much higher than 1, and a good language model should aim to minimize the perplexity score on the test set.
