@@ -1,14 +1,47 @@
 README.md
 
-# VSCode
-.vscode
-
-# Mac
-.DS_Store
-
-# Hugo
-.hugo_build.lock
-
 # deploy
 public
 docs
+node_modules
+
+
+# Ignore the Gatsby cache
+.cache/
+
+# Ignore the public directory where the built site is stored
+public/
+
+# Ignore development-specific files
+node_modules/
+npm-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Ignore environment files (if you use dotenv or similar)
+.env*
+
+# Ignore logs and other build files
+*.log
+build/
+
+# Ignore VSCode settings
+.vscode/
+
+# Ignore Mac and Windows system files
+.DS_Store
+Thumbs.db
+
+# Ignore Gatsby config files (if they contain sensitive information)
+gatsby-config.js
+
+# Ignore local development configuration
+.env.development
+
+# Ignore Netlify build output (if you use Netlify for deployment)
+netlify/
+
+# Ignore Jest snapshot files (if you use Jest for testing)
+__snapshots__/
+
