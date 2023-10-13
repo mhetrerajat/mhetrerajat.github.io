@@ -45,3 +45,4 @@ netlify/
 # Ignore Jest snapshot files (if you use Jest for testing)
 __snapshots__/
 
+__pycache__

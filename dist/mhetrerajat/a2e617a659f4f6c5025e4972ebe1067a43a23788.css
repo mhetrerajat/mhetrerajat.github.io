@@ -263,6 +263,17 @@ td, th {
 .notion-external-object-token::selection, .notion-page-mention-token::selection {
     background: rgba(35, 131, 226, 0.14)
     }
+.notion-citation-mention-token {
+    background-color: #acaba9;
+    color: #fff
+    }
+.notion-dark-theme .notion-citation-mention-token {
+    background-color: #787774;
+    color: #2f2f2f
+    }
+.notion-citation-mention-token.notion-enable-hover:hover {
+    background-color: #2383e2
+    }
 .notion-focusable-within:focus-within {
     box-shadow: inset 0 0 0 1px rgba(35, 131, 226, 0.57), 0 0 0 2px rgba(35, 131, 226, 0.35) !important
     }
@@ -666,13 +677,13 @@ input[type=number].input-hide-arrows {
     flex-direction: column;
     position: relative
     }
-.autolayout-col.autolayout-top-left {
+.autolayout-col.autolayout-start, .autolayout-col.autolayout-top-left {
     align-items: flex-start
     }
 .autolayout-col.autolayout-top-center {
     align-items: center
     }
-.autolayout-col.autolayout-top-right {
+.autolayout-col.autolayout-end, .autolayout-col.autolayout-top-right {
     align-items: flex-end
     }
 .autolayout-col.autolayout-center-left {
@@ -699,15 +710,15 @@ input[type=number].input-hide-arrows {
     align-items: flex-end;
     justify-content: flex-end
     }
-.autolayout-col.autolayout-stretch {
-    align-items: stretch
+.autolayout-col.autolayout-space {
+    justify-content: space-between
     }
 .autolayout-row {
     display: flex;
     flex-direction: row;
     position: relative
     }
-.autolayout-row.autolayout-top-left {
+.autolayout-row.autolayout-start, .autolayout-row.autolayout-top-left {
     align-items: flex-start
     }
 .autolayout-row.autolayout-top-center {
@@ -729,7 +740,7 @@ input[type=number].input-hide-arrows {
     align-items: center;
     justify-content: flex-end
     }
-.autolayout-row.autolayout-bottom-left {
+.autolayout-row.autolayout-bottom-left, .autolayout-row.autolayout-end {
     align-items: flex-end
     }
 .autolayout-row.autolayout-bottom-center {
@@ -740,12 +751,18 @@ input[type=number].input-hide-arrows {
     align-items: flex-end;
     justify-content: flex-end
     }
-.autolayout-row.autolayout-stretch {
-    align-items: stretch
+.autolayout-row.autolayout-space {
+    justify-content: space-between
     }
 .layout {
     display: grid;
     width: 100%
+    }
+.home-content:before {
+    background: rgba(0, 0, 0, 0.02);
+    content: " ";
+    filter: blur(24px);
+    position: absolute
     }
 .layout-content {
     gap: inherit;
@@ -806,9 +823,19 @@ input[type=number].input-hide-arrows {
     font-size: 12px;
     font-weight: 400
     }
+.tx-body-14-med {
+    font-size: 14px;
+    font-weight: 510;
+    line-height: 18px
+    }
 .tx-body-14-reg {
     font-size: 14px;
     font-weight: 400
+    }
+.tx-body-14-semi {
+    font-size: 14px;
+    font-weight: 590;
+    line-height: 18px
     }
 .tx-heading-17-med {
     font-size: 17px;
@@ -819,6 +846,32 @@ input[type=number].input-hide-arrows {
     font-size: 17px;
     font-weight: 400;
     line-height: 22px
+    }
+.tx-heading-17-semi {
+    font-size: 17px;
+    font-weight: 590;
+    line-height: 22px
+    }
+.tx-ios-callout-16-reg {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px
+    }
+.tx-ios-caption-12-reg {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px
+    }
+.tx-ios-subhead-15-med-c {
+    font-size: 15px;
+    font-weight: 510;
+    letter-spacing: -0.24px;
+    line-height: normal
+    }
+.tx-ios-title-3-bold {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 25px
     }
 .tx-page-content-h3 {
     font-size: 20px;
