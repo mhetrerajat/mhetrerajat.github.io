@@ -1,11 +1,14 @@
 ---
 const platform = "github";
 const username = "mhetrerajat";
+const currentYear = new Date().getFullYear();
 ---
 
-<footer class="container w-full md:max-w-3xl mx-auto pt-20">
-    <p>
-        © 2023 <a
+<footer class="container w-full md:max-w-3xl mx-auto pt-20 inset-x-0 bottom-0">
+    <p class="text-center">
+        © {currentYear}
+        <a
+            class="text-blue-600"
             href={`https://www.${platform}.com/${username}`}
             target="_blank">Rajat Mhetre</a
         >

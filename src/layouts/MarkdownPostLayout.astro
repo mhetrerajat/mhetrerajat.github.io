@@ -1,13 +1,32 @@
 ---
+import { Breadcrumb, Badge } from "flowbite-react";
+import { FaPenClip, FaClock } from "react-icons/fa6";
+
 import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
 <Layout pageTitle={frontmatter.title}>
-    <h1>{frontmatter.title}</h1>
-    <p>{frontmatter.pubDate.slice(0, 10)}</p>
-    <!-- <p><em>{frontmatter.description}</em></p> -->
-    <p>Written by: {frontmatter.author}</p>
-    <!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
-    <slot />
+    <Breadcrumb
+        aria-label="Default breadcrumb example"
+        className="py-3"
+    >
+        <Breadcrumb.Item href="/"> Home </Breadcrumb.Item>
+        <Breadcrumb.Item href="/posts/">Posts</Breadcrumb.Item>
+        <Breadcrumb.Item>{frontmatter.title}</Breadcrumb.Item>
+    </Breadcrumb>
+    <article class="prose prose-slate">
+        <h1>{frontmatter.title}</h1>
+        <div class="flex flex-wrap gap-2">
+            <Badge color="indigo" icon={FaPenClip}>{frontmatter.author}</Badge>
+            <Badge color="gray" icon={FaClock}>
+                {frontmatter.pubDate.slice(0, 10)}
+            </Badge>
+        </div>
+        <!-- <p><em>{frontmatter.description}</em></p> -->
+        <!-- <p>Written by: {frontmatter.author}</p> -->
+        <!-- <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} /> -->
+
+        <slot />
+    </article>
 </Layout>

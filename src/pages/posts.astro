@@ -1,0 +1,37 @@
+---
+import { Breadcrumb } from "flowbite-react";
+
+import Layout from "../layouts/Layout.astro";
+
+import PostList from "../components/react/PostList";
+import type { Post } from "../components/types";
+
+const pageTitle = "Rajat Mhetre | Posts";
+
+const parsedPosts: Post[] = [
+    {
+        link: "/posts/default-arguments-in-python/",
+        title: "default-arguments-in-python",
+        postDate: "2024-02-05",
+    },
+    {
+        link: "/posts/auto-grading-with-llms-rag/",
+        title: "auto-grading-with-llms-rag",
+        postDate: "2024-02-06",
+    },
+];
+---
+
+<Layout pageTitle={pageTitle}>
+    <Breadcrumb
+        aria-label="Default breadcrumb example"
+        className="py-3"
+    >
+        <Breadcrumb.Item href="/"> Home </Breadcrumb.Item>
+        <Breadcrumb.Item>Posts</Breadcrumb.Item>
+    </Breadcrumb>
+
+    <h1 class="py-4 text-4xl font-extrabold">Posts</h1>
+
+    <PostList posts={parsedPosts} />
+</Layout>

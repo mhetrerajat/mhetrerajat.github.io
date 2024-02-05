@@ -1,5 +1,7 @@
 ---
-import Navigation from "../components/Navigation.astro";
+import { ThemeModeScript } from "flowbite-react";
+
+import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
@@ -18,10 +20,11 @@ const { pageTitle } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
+		<ThemeModeScript />
 	</head>
 	<body>
-		<Navigation />
-		<div class="container w-full md:max-w-3xl mx-auto pt-20">
+		<Header />
+		<div class="container w-full md:max-w-3xl mx-auto pt-10">
 			<slot />
 		</div>
 		<Footer />
