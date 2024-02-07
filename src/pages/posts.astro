@@ -20,6 +20,10 @@ const parsedPosts: Post[] = [
         postDate: "2024-02-06",
     },
 ];
+
+import { getCollection, getEntry } from 'astro:content';
+
+const posts = await getCollection('posts');
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -34,4 +38,6 @@ const parsedPosts: Post[] = [
     <h1 class="py-4 text-4xl font-extrabold">Posts</h1>
 
     <PostList posts={parsedPosts} />
+
+    <!-- <p>{posts[0].data.title}</p> -->
 </Layout>
