@@ -15,6 +15,7 @@ const HeaderBar = () => {
           Home
         </Navbar.Link>
         <Navbar.Link href="/posts/">Posts</Navbar.Link>
+        <Navbar.Link href="/resources/">Resources</Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
   );

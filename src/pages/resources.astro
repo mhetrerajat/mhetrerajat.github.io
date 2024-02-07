@@ -1,0 +1,40 @@
+---
+import { Breadcrumb } from "flowbite-react";
+
+import ResourcesList from "../components/react/ResourcesList";
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle = "Resources";
+
+const resourcesData = [
+    {
+        date: "16 Dec 2020",
+        title: "Denoising Diffusion Probabilistic Models",
+        link: "https://arxiv.org/abs/2006.11239",
+        tag: "arxiv",
+    },
+];
+---
+
+<Layout pageTitle={pageTitle}>
+
+    <Breadcrumb
+        aria-label="Default breadcrumb example"
+        className="py-3"
+    >
+        <Breadcrumb.Item href="/"> Home </Breadcrumb.Item>
+        <Breadcrumb.Item>Resources</Breadcrumb.Item>
+    </Breadcrumb>
+
+    <h1 class="py-4 text-4xl font-extrabold">Resources</h1>
+
+    <p>Updated as of 6 Feb 2024</p>
+    <p class="py-4 text-gray-500 text-justify">
+        This page is like my go-to list of cool stuff I've used for my projects
+        and research. I put it together myself, so there might be a few links
+        that don't work. If you find any, just give me a heads up on Github by
+        opening an issue.
+    </p>
+
+    <ResourcesList resources={resourcesData}/>
+</Layout>
