@@ -10,7 +10,10 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const { Content } = await entry.render();
+
+import DiscussionPanel from "../../components/react/DiscussionPanel";
 ---
 
 <!-- <h1>{entry.data.title}</h1> -->
 <Content />
+<DiscussionPanel/>

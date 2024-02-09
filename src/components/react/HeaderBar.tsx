@@ -15,9 +15,7 @@ const HeaderBar = () => {
       <Navbar.Toggle />
       <Badge color="warning" size="xs">Work In Progress</Badge>
       <Navbar.Collapse>
-        <Navbar.Link href="/" active>
-          Home
-        </Navbar.Link>
+        <Navbar.Link href="/" active>Home</Navbar.Link>
         <Navbar.Link href="/posts/">Posts</Navbar.Link>
         {/* <Navbar.Link href="/resources/">Resources</Navbar.Link> */}
       </Navbar.Collapse>
