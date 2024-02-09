@@ -4,6 +4,10 @@ const postsCollection = defineCollection({
     schema: z.object({
         title: z.string(),
         tags: z.array(z.string()),
+        author: z.string(),
+        pubDate: z.date(),
+        description: z.string(),
+        draft: z.boolean(),
     })
 });
 export const collections = {
