@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+    const kbItems = await getCollection("kb");
+    return kbItems.map((entry) => ({
+        params: { slug: entry.slug },
+        props: { entry },
+    }));
+}
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+
+import DiscussionPanel from "../../components/react/DiscussionPanel";
+---
+
+<!-- <h1>{entry.data.title}</h1> -->
+<Content />
+<DiscussionPanel/>

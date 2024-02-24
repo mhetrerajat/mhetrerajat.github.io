@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle = "Knowledge Base";
+
+import { getCollection } from "astro:content";
+
+import { Badge } from "flowbite-react";
+
+const kbItems = await getCollection("kb", ({ data }) => {
+    return !data.draft;
+});
+---
+
+<Layout pageTitle={pageTitle}>
+    <h1 class="py-4 text-4xl font-extrabold">Knowledge Base</h1>
+
+    <hr />
+
+    <h2 class="py-4 text-2xl font-bold">All</h2>
+
+    <table>
+        <tbody>
+            {
+                kbItems.map((x) => (
+                    <tr>
+                        <td>
+                            <a href={`/kb/${x.slug}`}>{x.data.title}</a>
+                        </td>
+                        <td>
+                            {x.data.tags.map((t) => (
+                                <Badge>{t}</Badge>
+                            ))}
+                        </td>
+                        <td>{x.data.pubDate}</td>
+                    </tr>
+                ))
+            }
+        </tbody>
+    </table>
+</Layout>

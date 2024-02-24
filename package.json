@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
+    "@astrojs/mdx": "^2.1.1",
+    "@astrojs/partytown": "^2.0.4",
     "@astrojs/react": "^3.0.9",
     "@astrojs/tailwind": "^5.1.0",
     "@giscus/react": "^2.4.0",
