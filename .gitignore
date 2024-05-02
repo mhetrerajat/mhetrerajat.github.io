@@ -12,3 +12,71 @@ README.md
 # deploy
 public
 docs
+
+# custom
+.astro
+
+# Dependency directories
+node_modules/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Typescript
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+
+# Sublime Text directories and files
+.sublime-project
+.sublime-workspace
+.svn/
+
+# Windows directories
+Thumbs.db
+ehthumbs.db
+
+# Mac directories
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Vim swap files
+.swp
+
+# macOS .DS_Store files
+**/.DS_Store
+
+# Node.js environment files
+.env
+.env.*
+
+# Parcel cache
+.cache/
