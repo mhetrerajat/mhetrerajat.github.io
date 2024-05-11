@@ -12,3 +12,9 @@ README.md
 # deploy
 public
 docs
+
+
+# custom
+.logs
+.cache
+.astro
