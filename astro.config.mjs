@@ -5,6 +5,6 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 
 export default defineConfig({
-  site: "https://mhetrerajat.vercel.app",
+  site: "https://mhetrerajat.github.io",
   integrations: [mdx(), sitemap(), tailwind()],
 });
