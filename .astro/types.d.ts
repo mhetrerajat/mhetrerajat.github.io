@@ -136,58 +136,16 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"blog": {
-"01-getting-started/index.md": {
-	id: "01-getting-started/index.md";
-  slug: "01-getting-started";
+"default-arguments-in-python.md": {
+	id: "default-arguments-in-python.md";
+  slug: "default-arguments-in-python";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
-"02-blog-collection/index.md": {
-	id: "02-blog-collection/index.md";
-  slug: "02-blog-collection";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"03-projects-collection/index.md": {
-	id: "03-projects-collection/index.md";
-  slug: "03-projects-collection";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"04-work-collection/index.md": {
-	id: "04-work-collection/index.md";
-  slug: "04-work-collection";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"05-markdown-syntax/index.md": {
-	id: "05-markdown-syntax/index.md";
-  slug: "05-markdown-syntax";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"06-mdx-syntax/index.mdx": {
-	id: "06-mdx-syntax/index.mdx";
-  slug: "06-mdx-syntax";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".mdx"] };
-"07-year-sorting-example/index.md": {
-	id: "07-year-sorting-example/index.md";
-  slug: "07-year-sorting-example";
-  body: string;
-  collection: "blog";
-  data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] };
-"08-draft-example/index.md": {
-	id: "08-draft-example/index.md";
-  slug: "08-draft-example";
+"ml-dl-glossary.md": {
+	id: "ml-dl-glossary.md";
+  slug: "ml-dl-glossary";
   body: string;
   collection: "blog";
   data: InferEntrySchema<"blog">
@@ -210,30 +168,30 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 };
 "work": {
-"apple.md": {
-	id: "apple.md";
-  slug: "apple";
+"amazon.md": {
+	id: "amazon.md";
+  slug: "amazon";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
-"facebook.md": {
-	id: "facebook.md";
-  slug: "facebook";
+"boxxai.md": {
+	id: "boxxai.md";
+  slug: "boxxai";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
-"google.md": {
-	id: "google.md";
-  slug: "google";
+"britecore.md": {
+	id: "britecore.md";
+  slug: "britecore";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
 } & { render(): Render[".md"] };
-"mcdonalds.md": {
-	id: "mcdonalds.md";
-  slug: "mcdonalds";
+"solofunds.md": {
+	id: "solofunds.md";
+  slug: "solofunds";
   body: string;
   collection: "work";
   data: InferEntrySchema<"work">
