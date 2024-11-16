@@ -2,7 +2,7 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "strictNullChecks": true,
-    "baseUrl": "/Users/rajatmhetre/workspaces/mhetrerajat.github.io",
+    "baseUrl": ".",
     "paths": {
       "@*": [
         "./src/*"
