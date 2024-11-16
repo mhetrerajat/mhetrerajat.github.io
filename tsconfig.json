@@ -2,11 +2,13 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "strictNullChecks": true,
-    "baseUrl": ".",
+    "baseUrl": "/Users/rajatmhetre/workspaces/mhetrerajat.github.io",
     "paths": {
       "@*": [
         "./src/*"
       ]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
