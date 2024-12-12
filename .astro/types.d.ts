@@ -143,6 +143,13 @@ declare module 'astro:content' {
   collection: "blog";
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] };
+"large-language-models-reading-list.md": {
+	id: "large-language-models-reading-list.md";
+  slug: "large-language-models-reading-list";
+  body: string;
+  collection: "blog";
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] };
 "ml-dl-glossary.md": {
 	id: "ml-dl-glossary.md";
   slug: "ml-dl-glossary";
