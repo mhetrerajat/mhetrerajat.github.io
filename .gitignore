@@ -55,3 +55,6 @@ examples/**/env.d.ts
 # https://github.com/withastro/astro/pull/11759#discussion_r1721444711)
 *.code-workspace
 
+
+# Astro
+.astro/
