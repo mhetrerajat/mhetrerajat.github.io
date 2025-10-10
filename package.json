@@ -5,12 +5,13 @@
   "scripts": {
     "dev": "astro dev",
     "dev:network": "astro dev --host",
-    "build": "astro check && astro build",
+    "build": "pnpm run format && astro check && astro build",
     "preview": "astro preview",
     "preview:network": "astro preview --host",
     "astro": "astro",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.7",
@@ -43,6 +44,8 @@
     "eslint-plugin-astro": "^0.32.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
     "typescript": "^5.9.3",

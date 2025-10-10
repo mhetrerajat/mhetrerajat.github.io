@@ -51,7 +51,7 @@ Self-attention was introduced in the Transformer architecture as an alternative 
 
 The self-attention mechanism in the Transformer architecture is based on three learned matrices: the query matrix, the key matrix, and the value matrix. The matrices are used to compute the attention scores for each token in the input sequence, and the attention scores are then used to weight the values of the other tokens in the sequence to compute the output of the self-attention mechanism.
 
-$$ Attention(Q, K, V) = softmax(QK^T / \sqrt(d_k)) * V $$
+$$ Attention(Q, K, V) = softmax(QK^T / \sqrt(d_k)) \* V $$
 
 where `Q`, `K`, and `V` are the query, key, and value matrices, respectively, and d_k is the dimensionality of the key vectors. The softmax function is applied row-wise to the matrix `QK^T / sqrt(d_k)` to obtain the attention scores, which are then used to weight the values in the matrix `V` to obtain the output of the self-attention mechanism.
 
@@ -104,7 +104,7 @@ Suppose we flip a coin 10 times and observe the following sequence of outcomes: 
 
 The likelihood function can be expressed as the product of the probabilities of observing each outcome given the value of p. In other words, the likelihood function measures how likely it is to observe the given sequence of outcomes under the assumption that the probability of getting heads is p. The likelihood function for this example can be written as:
 
-$$ L(p) = p^5 * (1-p)^5 $$
+$$ L(p) = p^5 \* (1-p)^5 $$
 
 To find the value of p that maximizes the likelihood, we can take the derivative of the likelihood function with respect to p and set it to zero. Solving for p, we obtain the MLE estimate of p:
 

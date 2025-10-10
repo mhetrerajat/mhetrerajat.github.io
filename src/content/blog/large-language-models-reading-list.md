@@ -5,7 +5,6 @@ date: 2024-04-11
 draft: false
 ---
 
-
 This is a curated space where I share and maintain an evolving list of papers and resources on Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), evaluation techniques, and intelligent agents.
 
 ## Surveys

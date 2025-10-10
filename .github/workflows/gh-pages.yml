@@ -4,7 +4,7 @@ on:
   # Trigger the workflow every time you push to the `main` branch
   # Using a different branch name? Replace `main` with your branch’s name
   push:
-    branches: [ master ]
+    branches: [master]
   # Allows you to run this workflow manually from the Actions tab on GitHub.
   workflow_dispatch:
 
@@ -23,9 +23,9 @@ jobs:
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
-          path: . 
-          node-version: 20 
-          package-manager: pnpm@latest 
+          path: .
+          node-version: 20
+          package-manager: pnpm@latest
 
   deploy:
     needs: build
