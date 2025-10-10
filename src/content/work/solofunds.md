@@ -6,4 +6,3 @@ dateEnd: "05/24/2024"
 ---
 
 Responsible for enhancing the Credit Risk Model, aka SoLo Score, to benefit over a million active users.
-
