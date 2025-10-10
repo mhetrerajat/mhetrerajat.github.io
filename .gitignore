@@ -58,3 +58,6 @@ examples/**/env.d.ts
 
 # Astro
 .astro/
+
+# Frontmatter
+.frontmatter
