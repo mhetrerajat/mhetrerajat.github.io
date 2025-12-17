@@ -8,15 +8,20 @@ import { SITE } from "@consts";
 type Props = {
   title: string;
   description: string;
+  schema?: object;
 };
 
-const { title, description } = Astro.props;
+const { title, description, schema } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
-    <Head title={`${title} | ${SITE.NAME}`} description={description} />
+    <Head
+      title={`${title} | ${SITE.NAME}`}
+      description={description}
+      schema={schema}
+    />
     <GoogleAnalytics />
 
     <link
