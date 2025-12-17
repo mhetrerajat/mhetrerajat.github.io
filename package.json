@@ -23,7 +23,7 @@
     "@fontsource/lora": "^5.2.8",
     "@giscus/react": "^3.1.0",
     "@tailwindcss/typography": "^0.5.19",
-    "astro": "^5.14.3",
+    "astro": "^5.15.9",
     "clsx": "^2.1.1",
     "mermaid": "^11.12.0",
     "playwright": "^1.56.0",
