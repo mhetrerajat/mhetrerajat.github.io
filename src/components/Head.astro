@@ -188,4 +188,11 @@ const { title, description, image = "/nano.png" } = Astro.props;
   document.addEventListener("DOMContentLoaded", () => init());
   document.addEventListener("astro:after-swap", () => init());
   preloadTheme();
+
+  // Track page views on Astro view transitions
+  document.addEventListener("astro:page-load", () => {
+    if (typeof gtag !== "undefined") {
+      gtag("event", "page_view");
+    }
+  });
 </script>
