@@ -31,9 +31,23 @@ const work = await Promise.all(
     return { ...item, Content };
   })
 );
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE.NAME,
+  url: Astro.site,
+  image: new URL("nano.png", Astro.site),
+  sameAs: SOCIALS.map((social) => social.HREF),
+  jobTitle: "Software Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Amazon",
+  },
+};
 ---
 
-<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION}>
+<PageLayout title={HOME.TITLE} description={HOME.DESCRIPTION} schema={schema}>
   <Container>
     <h4 class="animate font-semibold text-black dark:text-white">
       Hi, I'm Rajat <span class="text-xl">👋🏻</span>
