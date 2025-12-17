@@ -1,9 +1,9 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import PageLayout from "@layouts/PageLayout.astro";
-import Container from "@components/Container.astro";
 import ArrowCard from "@components/ArrowCard.astro";
+import Container from "@components/Container.astro";
 import { BLOG } from "@consts";
+import PageLayout from "@layouts/PageLayout.astro";
 
 const data = (await getCollection("blog"))
   .filter((post) => !post.data.draft)
@@ -22,7 +22,10 @@ const posts = data.reduce((acc: Acc, post) => {
   return acc;
 }, {});
 
-const years = Object.keys(posts).sort((a, b) => parseInt(b) - parseInt(a));
+// Enforces explicit radix (10) to prevent potential octal interpretation in older environments.
+const years = Object.keys(posts).sort(
+  (a, b) => parseInt(b, 10) - parseInt(a, 10),
+);
 ---
 
 <PageLayout title={BLOG.TITLE} description={BLOG.DESCRIPTION}>

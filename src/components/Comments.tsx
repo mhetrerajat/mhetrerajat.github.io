@@ -1,7 +1,7 @@
 /* Reference: https://www.thomasledoux.be/blog/hosting-blog-comments-reactions-github-discussions */
 
-import * as React from "react";
 import Giscus from "@giscus/react";
+import * as React from "react";
 
 const id = "inject-comments";
 

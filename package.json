@@ -9,9 +9,10 @@
     "preview": "astro preview",
     "preview:network": "astro preview --host",
     "astro": "astro",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write ."
+    "lint": "biome lint .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "check": "biome check ."
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.13",
@@ -36,22 +37,13 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.6",
-    "@eslint/js": "^9.39.2",
+    "@biomejs/biome": "^2.3.9",
     "@playform/compress": "^0.1.9",
-    "@types/eslint": "^9.6.1",
     "@types/react": "^18.3.27",
     "@types/react-dom": "^18.3.7",
-    "@typescript-eslint/eslint-plugin": "^8.50.0",
-    "@typescript-eslint/parser": "^8.50.0",
-    "eslint": "^9.39.2",
-    "eslint-plugin-astro": "^0.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
-    "globals": "^16.5.0",
-    "prettier": "^3.7.4",
-    "prettier-plugin-astro": "^0.14.1",
+    "baseline-browser-mapping": "^2.9.8",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.50.0"
+    "typescript": "^5.9.3"
   }
 }
