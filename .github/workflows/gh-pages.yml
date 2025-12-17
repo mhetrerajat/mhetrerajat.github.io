@@ -17,18 +17,28 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
       - name: Get playwright for mermaid rendering
         run: npx playwright install --with-deps chromium
+      - name: Verify environment variables
+        run: |
+          if [ -z "$PUBLIC_GA_MEASUREMENT_ID" ]; then
+            echo "PUBLIC_GA_MEASUREMENT_ID is not set"
+            echo "GA tracking will be disabled in this build"
+          else
+            echo "PUBLIC_GA_MEASUREMENT_ID is set"
+            echo "GA tracking will be enabled in this build"
+          fi
       - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
           path: .
           node-version: 20
           package-manager: pnpm@latest
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
